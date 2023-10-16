@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ButtonManager : MonoBehaviour
 {
     public static ButtonManager instance;
-    public GameObject sliderbgm,menu,settingpopup;
+    public GameObject slidervfx,sliderbgm,menu,settingpopup,ingameui,gameoverui;
     private void Awake()
     {
         instance = this;
@@ -19,6 +19,7 @@ public class ButtonManager : MonoBehaviour
         GameObject.Find("Setting_Button").GetComponent<Button>().onClick.AddListener(Onsetting);
         GameObject.Find("Exit_Button").GetComponent<Button>().onClick.AddListener(Onexit);
         GameObject.Find("Setting_Close").GetComponent<Button>().onClick.AddListener(Popupsetting);
+        GameObject.Find("Back_Button").GetComponent<Button>().onClick.AddListener(GameManager._gamemanager.Gameover);
         OC_UI();
 
     }
@@ -27,7 +28,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            mockGameover();
+            GameManager._gamemanager.Gameover();
         }
     }
 
@@ -37,16 +38,15 @@ public class ButtonManager : MonoBehaviour
     {
         menu = GameObject.Find("Menu");
         sliderbgm = GameObject.Find("bgm_Slider");
+        slidervfx = GameObject.Find("vfx_Slider");
         settingpopup = GameObject.Find("Setting_Popup");
         settingpopup.SetActive(false);
+        ingameui = GameObject.Find("Ingame_Panel");
+        ingameui.SetActive(false);
+        gameoverui = GameObject.Find("GameOver_Popup");
+        gameoverui.SetActive(false);
     }
 
-    public void mockGameover()
-    {
-        menu.SetActive(true);
-        GameManager._gamemanager.start = false;
-        Time.timeScale = 0f;
-    }
 
     #endregion
 
@@ -57,6 +57,7 @@ public class ButtonManager : MonoBehaviour
     {
         Debug.Log("Startgame");
         menu.SetActive(false);
+        ingameui.SetActive(true);
         Time.timeScale = 1f;
         GameManager._gamemanager.start = true;
         
@@ -78,6 +79,12 @@ public class ButtonManager : MonoBehaviour
         Debug.Log("ExitGame");
     }
 
+    public void Ongameover()
+    {
+        gameoverui.SetActive(true);
+        GameManager._gamemanager.start = false;
+        Time.timeScale = 0f;
+    }
 
     #endregion
 }

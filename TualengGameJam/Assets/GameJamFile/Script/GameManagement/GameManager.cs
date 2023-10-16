@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,8 +24,8 @@ public class GameManager : MonoBehaviour
     }
 
     public void Gameover()
-    {
-        ButtonManager.instance.mockGameover();
+    {        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void Pausegame()
@@ -44,17 +45,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Continuegame()
-    {
-        if (start == true && Time.timeScale != 1f)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                Debug.Log("Continue");
-                Time.timeScale = 1f;
-            }
-        }
-    }
+    
 
     void Restartgame()
     {
