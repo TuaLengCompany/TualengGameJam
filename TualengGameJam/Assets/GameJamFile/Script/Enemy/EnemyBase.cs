@@ -26,6 +26,7 @@ public class EnemyBase : StateMachine
 
     public NavMeshAgent navMeshAgent;
     public GameObject player;
+
     private void Awake()
     {
         copyEnemyBehaviour();
@@ -107,11 +108,6 @@ public class EnemyBase : StateMachine
         {
             ReceiveDamage(50);
         }
-    }
-    public float time = 20f;
-    private void Start()
-    {
-        
     }
 
     public void Die()

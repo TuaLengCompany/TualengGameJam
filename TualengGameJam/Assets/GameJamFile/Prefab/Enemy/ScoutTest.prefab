@@ -35,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3622646058241798203
 MeshFilter:
@@ -132,6 +132,8 @@ MonoBehaviour:
     isUnDaed: 0
   navMeshAgent: {fileID: 8091007768625772716}
   player: {fileID: 0}
+  enemyBullet: {fileID: 1294834399362254, guid: 9226726c851a790469d64d3093814ad4,
+    type: 3}
   isPlayer:
     serializedVersion: 2
     m_Bits: 64

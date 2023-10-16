@@ -1251,7 +1251,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1697950718
 GameObject:
@@ -1683,7 +1683,7 @@ PrefabInstance:
     - target: {fileID: 2700876472435031051, guid: 0747e0fdc59122a46a6aa0a06b69245d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2700876472435031051, guid: 0747e0fdc59122a46a6aa0a06b69245d,
         type: 3}
@@ -1740,6 +1740,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Objecpooling
       objectReference: {fileID: 0}
+    - target: {fileID: 7475931779168431688, guid: 0747e0fdc59122a46a6aa0a06b69245d,
+        type: 3}
+      propertyPath: pools.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 3754210358996112816, guid: 9f8bdc6f6cb3b8046851a6779c5826ab,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
