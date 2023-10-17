@@ -151,11 +151,12 @@ public class PlayerController : MonoBehaviour
     void ReceiveDamage(int damage)
     {
 		playerhealth -= damage;
-    }
+		PlayerModels[PlayerIndex].CurrentHealth = playerhealth;
+	}
 
-    #endregion
+	#endregion
 
-    #region Attack
+	#region Attack
 
 	void BasicAttack()
     {
@@ -167,6 +168,7 @@ public class PlayerController : MonoBehaviour
 				{
 					StartCoroutine(DelayTime(1, playerAttackSpeed));
 					playerStamina--;
+					PlayerModels[PlayerIndex].CurrentStamina = playerStamina;
 					if (playerType == PlayerType.Tank || playerType == PlayerType.Mage)
 					{
 						PlayerModels[PlayerIndex].transform.GetChild(0).gameObject.SetActive(true);
