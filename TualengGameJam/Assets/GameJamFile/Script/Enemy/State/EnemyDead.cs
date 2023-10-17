@@ -15,7 +15,10 @@ public class EnemyDead : IState
     {
         enemy.navMeshAgent.isStopped = true;
         enemy.navMeshAgent.speed = 0;
-        Tool.Delayfuntion(enemy.Die,3f);
+        enemy.isDead = true;
+        if(enemy.animator != null)
+            enemy.animator.SetBool("Dead", true);
+        Tool.Delayfuntion(enemy.Die,5f);
     }
 
     public void Exit()
