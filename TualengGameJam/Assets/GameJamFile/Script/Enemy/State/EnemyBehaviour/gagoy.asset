@@ -16,7 +16,7 @@ MonoBehaviour:
     enemyType: 1
     enemyAttackType: 0
     EnemyHealth: 100
-    EnemyAttackRang: 2
+    EnemyAttackRang: 1
     EnemyDetectRang: 8
     EnemyAttackSpeed: 1
     isUnDaed: 0
