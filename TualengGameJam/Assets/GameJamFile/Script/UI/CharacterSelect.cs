@@ -11,6 +11,7 @@ public class CharacterSelect : MonoBehaviour
     public Sprite[] skill;
     public string[] stamina;
     [SerializeField] GameObject stamina_Display;
+    public GameObject MenuPanel;
     private void OnEnable()
     {
         FindDisplay();
@@ -20,6 +21,7 @@ public class CharacterSelect : MonoBehaviour
     void FindDisplay()
     {
         stamina_Display = GameObject.Find("stamina_Text");
+        GameObject.Find("Char_Back").GetComponent<Button>().onClick.AddListener(BackToMenu);
     }
 
     void AddButton()
@@ -64,5 +66,11 @@ public class CharacterSelect : MonoBehaviour
         GameObject.Find("atk").GetComponent<Image>().sprite = atk[3];
         GameObject.Find("skill_display").GetComponent<Image>().sprite = skill[3];
         stamina_Display.GetComponent<Text>().text = stamina[3];
+    }
+
+    void BackToMenu()
+    {
+        MenuPanel.SetActive(true);
+        this.gameObject.SetActive(false);
     }
 }

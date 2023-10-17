@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ButtonManager : MonoBehaviour
 {
     public static ButtonManager instance;
-    public GameObject slidervfx,sliderbgm,menu,settingpopup,ingameui,gameoverui;
+    public GameObject slidervfx,sliderbgm,menu,settingpopup,ingameui,gameoverui,charui;
     private void Awake()
     {
         instance = this;
@@ -17,6 +17,7 @@ public class ButtonManager : MonoBehaviour
     {
         GameObject.Find("Startgame_Button").GetComponent<Button>().onClick.AddListener(Onplay);
         GameObject.Find("Setting_Button").GetComponent<Button>().onClick.AddListener(Onsetting);
+        GameObject.Find("Char_Button").GetComponent<Button>().onClick.AddListener(Oncharacter);
         GameObject.Find("Exit_Button").GetComponent<Button>().onClick.AddListener(Onexit);
         GameObject.Find("Setting_Close").GetComponent<Button>().onClick.AddListener(Popupsetting);
         GameObject.Find("Back_Button").GetComponent<Button>().onClick.AddListener(GameManager._gamemanager.Gameover);
@@ -45,6 +46,8 @@ public class ButtonManager : MonoBehaviour
         ingameui.SetActive(false);
         gameoverui = GameObject.Find("GameOver_Popup");
         gameoverui.SetActive(false);
+        charui = GameObject.Find("Character_Panel");
+        charui.SetActive(false);
     }
 
 
@@ -84,6 +87,12 @@ public class ButtonManager : MonoBehaviour
         gameoverui.SetActive(true);
         GameManager._gamemanager.start = false;
         Time.timeScale = 0f;
+    }
+
+    void Oncharacter()
+    {
+        charui.SetActive(true);
+        menu.SetActive(false);
     }
 
     #endregion
