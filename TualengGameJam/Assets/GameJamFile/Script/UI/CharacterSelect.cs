@@ -9,6 +9,7 @@ public class CharacterSelect : MonoBehaviour
     public Sprite[] avatar;
     public Sprite[] atk;
     public Sprite[] skill;
+    public Sprite[] SusCard;
     public string[] stamina;
     [SerializeField] GameObject stamina_Display;
     public GameObject MenuPanel;
@@ -37,6 +38,7 @@ public class CharacterSelect : MonoBehaviour
         GameObject.Find("AvatarRole").GetComponent<Image>().sprite = Name[0];
         GameObject.Find("ShowAvatar").GetComponent<Image>().sprite = avatar[0];
         GameObject.Find("atk").GetComponent<Image>().sprite = atk[0];
+        GameObject.Find("ShowSus").GetComponent<Image>().sprite = SusCard[0];
         GameObject.Find("skill_display").GetComponent<Image>().sprite = skill[0];
         stamina_Display.GetComponent<Text>().text = stamina[0];
     }
@@ -46,6 +48,7 @@ public class CharacterSelect : MonoBehaviour
         GameObject.Find("AvatarRole").GetComponent<Image>().sprite = Name[1];
         GameObject.Find("ShowAvatar").GetComponent<Image>().sprite = avatar[1];
         GameObject.Find("atk").GetComponent<Image>().sprite = atk[1];
+        GameObject.Find("ShowSus").GetComponent<Image>().sprite = SusCard[1];
         GameObject.Find("skill_display").GetComponent<Image>().sprite = skill[1];
         stamina_Display.GetComponent<Text>().text = stamina[1];
     }
@@ -55,6 +58,7 @@ public class CharacterSelect : MonoBehaviour
         GameObject.Find("AvatarRole").GetComponent<Image>().sprite = Name[2];
         GameObject.Find("ShowAvatar").GetComponent<Image>().sprite = avatar[2];
         GameObject.Find("atk").GetComponent<Image>().sprite = atk[2];
+        GameObject.Find("ShowSus").GetComponent<Image>().sprite = SusCard[2];
         GameObject.Find("skill_display").GetComponent<Image>().sprite = skill[2];
         stamina_Display.GetComponent<Text>().text = stamina[2];
     }
@@ -64,13 +68,13 @@ public class CharacterSelect : MonoBehaviour
         GameObject.Find("AvatarRole").GetComponent<Image>().sprite = Name[3];
         GameObject.Find("ShowAvatar").GetComponent<Image>().sprite = avatar[3];
         GameObject.Find("atk").GetComponent<Image>().sprite = atk[3];
+        GameObject.Find("ShowSus").GetComponent<Image>().sprite = SusCard[3];
         GameObject.Find("skill_display").GetComponent<Image>().sprite = skill[3];
         stamina_Display.GetComponent<Text>().text = stamina[3];
     }
 
     void BackToMenu()
     {
-        MenuPanel.SetActive(true);
         this.gameObject.SetActive(false);
     }
 }

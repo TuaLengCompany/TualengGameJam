@@ -31,6 +31,10 @@ public class ButtonManager : MonoBehaviour
         {
             GameManager._gamemanager.Gameover();
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GameManager._gamemanager.Gameover();
+        }
     }
 
     #region Open/Close UI
@@ -92,7 +96,6 @@ public class ButtonManager : MonoBehaviour
     void Oncharacter()
     {
         charui.SetActive(true);
-        menu.SetActive(false);
     }
 
     #endregion
