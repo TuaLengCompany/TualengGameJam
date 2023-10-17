@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - PlayerAttack
+=======
+  - Enemy
+>>>>>>> d864bdb377fce487a650fb9b35e1cca4088917bc
   layers:
   - Default
   - TransparentFX
@@ -12,7 +16,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - IsPlayer
   - 
   - 
   - 
