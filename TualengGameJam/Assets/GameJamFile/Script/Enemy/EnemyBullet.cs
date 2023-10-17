@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
+    public int bulletDamage;
     private float bulletspeed;
+
     private void FixedUpdate()
     {
         transform.Translate(Vector3.forward * bulletspeed * Time.deltaTime);
@@ -19,6 +21,8 @@ public class EnemyBullet : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            other.GetComponent<PlayerController>().ReceiveDamage(bulletDamage);
+            Debug.Log("EnemyBulletHit");
             Destroy(gameObject);
         }
     }

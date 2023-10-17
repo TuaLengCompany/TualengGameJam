@@ -52,6 +52,7 @@ public class EnemyAttack : IState
     {
         GameObject bullet = Objectpooler.instance.SpawnFrompool("EnemyBullet", enemy.transform.position, enemy.transform.rotation);
         EnemyBullet enemyBullet = bullet.GetComponent<EnemyBullet>();
+        enemyBullet.bulletDamage = 5;
         Tool.SetActive(bullet, false, 5f);
 
         switch (enemy.myEnemyBehav.enemyType)
@@ -66,7 +67,8 @@ public class EnemyAttack : IState
         Collider[] player = Physics.OverlapSphere(enemy.transform.position,enemy.myEnemyBehav.EnemyAttackRang,enemy.isPlayer);
         foreach(var _player in player)
         {
-            Debug.Log("PlayerTakeDamage");
+            _player.GetComponent<PlayerController>().ReceiveDamage(5);
+            Debug.Log("player take dmg");
             if(enemy.myEnemyBehav.enemyType == EnemyType.Gagoy)
             {
                 enemy.myEnemyBehav.EnemyDetectRang = 0;

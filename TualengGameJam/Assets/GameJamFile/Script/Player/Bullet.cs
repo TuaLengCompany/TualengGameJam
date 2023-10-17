@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float ActiveTime;
-    public float Damage;
+    public int Damage;
     private void OnEnable()
     {
         Invoke(nameof(ShutSelf), ActiveTime);
@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
         //transform.position = Vector3.MoveTowards(transform.position, targetPos, 2*Time.deltaTime);
-        transform.Translate(Vector3.forward*10f*Time.deltaTime);
+        transform.Translate(Vector3.forward*20f*Time.deltaTime);
     }
 
 
@@ -23,6 +23,7 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             ShutSelf();
+            other.GetComponent<EnemyBase>().ReceiveDamage(Damage);
         }
     }
     void ShutSelf()

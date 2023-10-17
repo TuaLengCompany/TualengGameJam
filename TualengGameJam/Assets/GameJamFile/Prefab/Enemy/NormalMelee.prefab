@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 284641375784019255}
   - component: {fileID: 6788336459291896469}
   - component: {fileID: 124849302806936316}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NormalMelee
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,8 +106,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.4812464
+  m_Center: {x: 0, y: 0.98124635, z: 0}
 --- !u!114 &6788336459291896469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +132,8 @@ MonoBehaviour:
     isUnDaed: 0
   navMeshAgent: {fileID: 124849302806936316}
   player: {fileID: 0}
+  animator: {fileID: 0}
+  isDead: 0
   isPlayer:
     serializedVersion: 2
     m_Bits: 64
@@ -175,17 +177,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ee57eddee93b2ff4dae938ccb00ef7c8,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee57eddee93b2ff4dae938ccb00ef7c8,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.3
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee57eddee93b2ff4dae938ccb00ef7c8,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.3
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee57eddee93b2ff4dae938ccb00ef7c8,
         type: 3}

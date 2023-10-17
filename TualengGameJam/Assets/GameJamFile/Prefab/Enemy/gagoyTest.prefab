@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 838275052605470180}
   - component: {fileID: 6833590584675327163}
   - component: {fileID: 3359923607220894049}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: gagoyTest
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +32,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8655227023757199128}
   m_Father: {fileID: 0}
@@ -107,8 +107,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3, y: 4, z: 1}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!114 &838275052605470180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +133,8 @@ MonoBehaviour:
     isUnDaed: 0
   navMeshAgent: {fileID: 3359923607220894049}
   player: {fileID: 0}
+  animator: {fileID: 0}
+  isDead: 0
   isPlayer:
     serializedVersion: 2
     m_Bits: 64
@@ -203,17 +205,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: fc7a079217337094b94cb6dfe801822b,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.45
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fc7a079217337094b94cb6dfe801822b,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.45
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fc7a079217337094b94cb6dfe801822b,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.45
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fc7a079217337094b94cb6dfe801822b,
         type: 3}

@@ -13,6 +13,7 @@ public class EnemyDead : IState
 
     public void Enter()
     {
+        enemy.GetComponent<Collider>().enabled = false;
         enemy.navMeshAgent.isStopped = true;
         enemy.navMeshAgent.speed = 0;
         enemy.isDead = true;

@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     #region Movement
     void FixedCameraPos()
     {
-		Camera.main.transform.position = new Vector3(transform.position.x, 15, transform.position.z);
+		Camera.main.transform.position = new Vector3(transform.position.x, 12f, transform.position.z-4f);
 	}
 
     void RotateGroup()
@@ -148,7 +148,7 @@ public class PlayerController : MonoBehaviour
 
     #region Damage
 
-    void ReceiveDamage(int damage)
+    public void ReceiveDamage(int damage)
     {
 		playerhealth -= damage;
 		PlayerModels[PlayerIndex].CurrentHealth = playerhealth;

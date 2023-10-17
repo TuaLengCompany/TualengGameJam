@@ -106,14 +106,6 @@ public class EnemyBase : StateMachine
         }
     }
 
-    private void Update()///Test
-    {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            ReceiveDamage(50);
-        }
-    }
-
     public void Die()
     {
         EnemySpawner.Instance.EnemyDead(this.gameObject);
@@ -122,6 +114,7 @@ public class EnemyBase : StateMachine
 
     public void ReceiveDamage(int _Damage)
     {
+        Debug.Log("Recieve, Health :" + myEnemyBehav.EnemyHealth);
         myEnemyBehav.EnemyHealth -= _Damage;
 
         if (myEnemyBehav.EnemyHealth <= 0 && isDead == false)
