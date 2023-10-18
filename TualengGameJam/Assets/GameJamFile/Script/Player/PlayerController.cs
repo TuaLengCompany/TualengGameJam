@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     #region Movement
     void FixedCameraPos()
     {
-		Camera.main.transform.position = new Vector3(transform.position.x, 12f, transform.position.z-4f);
+		Camera.main.transform.position = new Vector3(transform.position.x, 12f, transform.position.z-8);
 	}
 
     void RotateGroup()
@@ -162,7 +162,7 @@ public class PlayerController : MonoBehaviour
     {
 		if (!check[1])
 		{
-			if (playerStamina > 0)
+			if (playerStamina > 0 && !AllPlayerDead)
 			{
 				if (Input.GetMouseButton(0))
 				{

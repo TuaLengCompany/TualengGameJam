@@ -23,7 +23,7 @@ public class EnemyBullet : MonoBehaviour
         {
             other.GetComponent<PlayerController>().ReceiveDamage(bulletDamage);
             Debug.Log("EnemyBulletHit");
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
