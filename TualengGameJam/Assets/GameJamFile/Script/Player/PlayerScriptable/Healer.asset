@@ -16,5 +16,5 @@ MonoBehaviour:
   MaxStamina: 40
   RequireMana: 60
   AttackSpeedDelay: 0.5
-  AttackDamage: 1
+  AttackDamage: 20
   playerType: 3

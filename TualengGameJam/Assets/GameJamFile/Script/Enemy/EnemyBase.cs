@@ -26,11 +26,16 @@ public class EnemyBase : StateMachine
 
     public NavMeshAgent navMeshAgent;
     public GameObject player;
+    public Animator animator;
+
+    public bool isDead = false;
+
     private void Awake()
     {
         copyEnemyBehaviour();
 
         player = GameObject.FindGameObjectWithTag("Player");
+        animator = GetComponentInChildren<Animator>();
 
         enemyHunt = new EnemyHunt(this);
         enemyAttack = new EnemyAttack(this);
@@ -101,19 +106,6 @@ public class EnemyBase : StateMachine
         }
     }
 
-    private void Update()///Test
-    {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            ReceiveDamage(50);
-        }
-    }
-    public float time = 20f;
-    private void Start()
-    {
-        
-    }
-
     public void Die()
     {
         EnemySpawner.Instance.EnemyDead(this.gameObject);
@@ -122,9 +114,10 @@ public class EnemyBase : StateMachine
 
     public void ReceiveDamage(int _Damage)
     {
+        Debug.Log("Recieve, Health :" + myEnemyBehav.EnemyHealth);
         myEnemyBehav.EnemyHealth -= _Damage;
 
-        if (myEnemyBehav.EnemyHealth <= 0)
+        if (myEnemyBehav.EnemyHealth <= 0 && isDead == false)
             ChageStateEnum(EnemyBaseState.Dead);
     }
 

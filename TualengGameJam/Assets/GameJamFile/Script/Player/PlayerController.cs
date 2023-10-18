@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     #region Movement
     void FixedCameraPos()
     {
-		Camera.main.transform.position = new Vector3(transform.position.x, 15, transform.position.z);
+		Camera.main.transform.position = new Vector3(transform.position.x, 12f, transform.position.z-8);
 	}
 
     void RotateGroup()
@@ -148,25 +148,27 @@ public class PlayerController : MonoBehaviour
 
     #region Damage
 
-    void ReceiveDamage(int damage)
+    public void ReceiveDamage(int damage)
     {
 		playerhealth -= damage;
-    }
+		PlayerModels[PlayerIndex].CurrentHealth = playerhealth;
+	}
 
-    #endregion
+	#endregion
 
-    #region Attack
+	#region Attack
 
 	void BasicAttack()
     {
 		if (!check[1])
 		{
-			if (playerStamina > 0)
+			if (playerStamina > 0 && !AllPlayerDead)
 			{
 				if (Input.GetMouseButton(0))
 				{
 					StartCoroutine(DelayTime(1, playerAttackSpeed));
 					playerStamina--;
+					PlayerModels[PlayerIndex].CurrentStamina = playerStamina;
 					if (playerType == PlayerType.Tank || playerType == PlayerType.Mage)
 					{
 						PlayerModels[PlayerIndex].transform.GetChild(0).gameObject.SetActive(true);
