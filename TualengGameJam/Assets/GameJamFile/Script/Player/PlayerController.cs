@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] float playerAttackSpeed;
 	[SerializeField] int playerAttackDamage;
 	[SerializeField] PlayerType playerType;
+    [SerializeField] Animator animator;
 
 	[Header("Check")]
 	public bool AllPlayerDead;
@@ -53,6 +54,7 @@ public class PlayerController : MonoBehaviour
 		playerAttackSpeed = PlayerModels[0].player.AttackSpeedDelay;
 		playerAttackDamage = PlayerModels[0].player.AttackDamage;
 		playerType = PlayerModels[0].CharacterType;
+		animator = PlayerModels[0].animator;
 		PlayerModels[0].is_Active = true;
 	}
 
@@ -143,6 +145,7 @@ public class PlayerController : MonoBehaviour
 		playerAttackSpeed = PlayerModels[characterIndex].player.AttackSpeedDelay;
 		playerAttackDamage = PlayerModels[characterIndex].player.AttackDamage;
 		playerType = PlayerModels[characterIndex].CharacterType;
+		animator = PlayerModels[characterIndex].animator;
 	}
 
 
@@ -167,6 +170,7 @@ public class PlayerController : MonoBehaviour
 				if (Input.GetMouseButton(0))
 				{
 					StartCoroutine(DelayTime(1, playerAttackSpeed));
+					animator.SetTrigger("Attack");
 					playerStamina--;
 					PlayerModels[PlayerIndex].CurrentStamina = playerStamina;
 					if (playerType == PlayerType.Tank || playerType == PlayerType.Mage)
@@ -225,7 +229,8 @@ public class PlayerController : MonoBehaviour
         {
 			PlayerModels[PlayerIndex].is_Active = false;
 			PlayerModels[PlayerIndex].is_Dead = true;
-			for(int i = 0; i < PlayerModels.Length; i++)
+			PlayerModels[PlayerIndex].ShowDeadModel();
+			for (int i = 0; i < PlayerModels.Length; i++)
             {
                 if (!PlayerModels[i].is_Dead)
                 {
@@ -250,10 +255,15 @@ public class PlayerController : MonoBehaviour
 				deadcount++;
 			}
         }
-		if(deadcount == PlayerModels.Length)
+		if(deadcount == PlayerModels.Length && GameManager._gamemanager.start != false)
         {
-			AllPlayerDead = true;
-        }
+
+			ButtonManager.instance.Ongameover();
+			//if (prop.CurrentHealth == 0 && GameManager._gamemanager.start != false)
+			//{
+			//	ButtonManager.instance.Ongameover();
+			//}
+		}
 
     }
 

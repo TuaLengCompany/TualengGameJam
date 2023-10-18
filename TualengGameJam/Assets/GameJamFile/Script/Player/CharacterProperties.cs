@@ -11,6 +11,7 @@ public class CharacterProperties : MonoBehaviour
     public int CurrentMana;
     public int CurrentStamina;
     public PlayerType CharacterType;
+    public Animator animator;
 
     float CurrentTime =0 ;
 
@@ -55,6 +56,12 @@ public class CharacterProperties : MonoBehaviour
     }
     public void ShowDeadModel()
     {
+        animator.SetTrigger("Dead");
+        Invoke(nameof(ActiveModelFalse), 3f);
+    }
 
+    void ActiveModelFalse()
+    {
+        transform.GetChild(1).gameObject.SetActive(false);
     }
 }
