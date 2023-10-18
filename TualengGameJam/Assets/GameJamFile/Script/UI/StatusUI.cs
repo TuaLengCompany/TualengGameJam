@@ -22,7 +22,7 @@ public class StatusUI : MonoBehaviour
     {
         SetHp();
         SetStamina();
-        SetHpColor();
+        //SetHpColor();
        
         if (prop.CurrentHealth == 0 && GameManager._gamemanager.start !=false)
         {
@@ -64,8 +64,7 @@ public class StatusUI : MonoBehaviour
 
     #region StaminaSection
     public void SetStamina()
-    {
-        
+    {        
         Staminabar.value = prop.CurrentStamina;
     }
     
