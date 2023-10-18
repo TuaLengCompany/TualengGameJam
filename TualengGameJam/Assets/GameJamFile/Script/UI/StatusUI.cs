@@ -24,10 +24,7 @@ public class StatusUI : MonoBehaviour
         SetStamina();
         //SetHpColor();
        
-        if (prop.CurrentHealth == 0 && GameManager._gamemanager.start !=false)
-        {
-            ButtonManager.instance.Ongameover();
-        }
+        
     }
 
     void SetMaximumValue()

@@ -28,14 +28,14 @@ public class ButtonManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            GameManager._gamemanager.Gameover();
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            GameManager._gamemanager.Gameover();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    GameManager._gamemanager.Gameover();
+        //}
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    GameManager._gamemanager.Gameover();
+        //}
     }
 
     #region Open/Close UI
@@ -66,6 +66,7 @@ public class ButtonManager : MonoBehaviour
     void Onplay()
     {
         Debug.Log("Startgame");
+        EnemySpawner.Instance.startSpawn();
         menu.SetActive(false);
         ingameui.SetActive(true);
         Time.timeScale = 1f;
