@@ -87,8 +87,8 @@ public class EnemyBase : StateMachine
 
             switch (myEnemyBehav.enemyType)
             {
-                case EnemyType.Scout: transform.Translate(Vector3.back * 5 * Time.deltaTime);
-                    break;
+                //case EnemyType.Scout: transform.Translate(Vector3.back * 5 * Time.deltaTime);
+                //    break;
                 case EnemyType.Gagoy: transform.Translate(Vector3.forward * 10 * Time.deltaTime);
                     break;
                 default: break;

@@ -161,7 +161,11 @@ public class PlayerController : MonoBehaviour
 
 	#region Attack
 
-	void BasicAttack()
+	[SerializeField] BulletPool Archerpool;
+	[SerializeField] BulletPool HealerPool;
+
+
+    void BasicAttack()
     {
 		if (!check[1])
 		{
@@ -180,7 +184,7 @@ public class PlayerController : MonoBehaviour
 					}
 					else if (playerType == PlayerType.Archer)
 					{
-						GameObject bullet = BulletPool.instance.GetBulletFromPool();
+						GameObject bullet = Archerpool.GetBulletFromPool();
 						bullet.transform.position = PlayerModels[PlayerIndex].transform.GetChild(0).gameObject.transform.position;
 						bullet.transform.rotation = PlayerModels[PlayerIndex].transform.GetChild(0).gameObject.transform.rotation;
 						bullet.GetComponent<Bullet>().Damage = playerAttackDamage;
@@ -189,11 +193,11 @@ public class PlayerController : MonoBehaviour
 					}
 					else if (playerType == PlayerType.Healer)
 					{
-						GameObject bullet = BulletPool.instance.GetBulletFromPool();
+						GameObject bullet = HealerPool.GetBulletFromPool();
 						bullet.transform.position = PlayerModels[PlayerIndex].transform.GetChild(0).gameObject.transform.position;
 						bullet.transform.rotation = PlayerModels[PlayerIndex].transform.GetChild(0).gameObject.transform.rotation;
 						bullet.GetComponent<Bullet>().Damage = playerAttackDamage;
-						bullet.GetComponent<Bullet>().ActiveTime = 0.3f;
+						bullet.GetComponent<Bullet>().ActiveTime = 0.6f;
 						bullet.SetActive(true);
 					}
 				}

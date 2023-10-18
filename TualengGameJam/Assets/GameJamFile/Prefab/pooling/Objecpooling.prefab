@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7475931779168431688
 MonoBehaviour:
@@ -46,6 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools:
   - tag: EnemyBullet
-    prefab: {fileID: 3754210358996112816, guid: 9f8bdc6f6cb3b8046851a6779c5826ab,
+    prefab: {fileID: 4164101805548087014, guid: b0c41c71f13b39049971b90dc96b3bf0,
       type: 3}
-    size: 50
+    size: 20

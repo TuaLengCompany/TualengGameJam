@@ -49,6 +49,7 @@ public class Objectpooler : MonoBehaviour
             return null;
         }
 
+        Debug.Log($"SpawnBullet : {tag}");
         GameObject objectToSpawn = poolDictionary[tag].Dequeue();
 
         objectToSpawn.transform.position = position;
