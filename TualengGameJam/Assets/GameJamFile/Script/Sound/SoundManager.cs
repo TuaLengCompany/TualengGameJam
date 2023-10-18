@@ -10,7 +10,7 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
-        Invoke("InSoundSetting", 0);
+        Invoke("InSoundSetting", 0f);
 
     }
 

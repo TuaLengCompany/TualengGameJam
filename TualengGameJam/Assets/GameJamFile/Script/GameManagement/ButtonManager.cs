@@ -88,6 +88,7 @@ public class ButtonManager : MonoBehaviour
     void Onexit()
     {
         Debug.Log("ExitGame");
+        Application.Quit();
     }
 
     public void Ongameover()
