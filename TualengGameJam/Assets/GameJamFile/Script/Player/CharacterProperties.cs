@@ -39,7 +39,7 @@ public class CharacterProperties : MonoBehaviour
             {
                 if (CurrentTime <= 0)
                 {
-                    CurrentTime = 3f;
+                    CurrentTime = 1f;
                     CurrentStamina++;
                 }
                 else
